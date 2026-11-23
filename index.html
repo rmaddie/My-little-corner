@@ -1239,15 +1239,7 @@ function render(){
       };
 
       el.querySelector(".delete").onclick=async()=>{
-        if(!confirm("Delete this message?"))return;
-
-        const files=atts.get(m.id)||[];
-
-        if(files.length){
-          await db.storage
-            .from(BUCKET)
-            .remove(files.map(x=>x.file_path));
-        }
+        if(!confirm("Delete this message from your curated site?"))return;
 
         await db
           .from(TABLE_POSTS)
