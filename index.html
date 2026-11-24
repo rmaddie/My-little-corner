@@ -905,7 +905,7 @@ async function load(){
   const {data,error}=await db
     .from(TABLE_POSTS)
     .select("*")
-    .order("created_at",{ascending:false});
+    .order("created_at",{ascending:true});
 
   if(error){
     console.error(error);
